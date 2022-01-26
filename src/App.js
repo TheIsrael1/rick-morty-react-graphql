@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { useQuery } from '@apollo/client';
+import { getAllCharacters } from './queries';
 
-function App() {
+const App = () => {
+  const {loading, error, data} = useQuery(getAllCharacters)
+ 
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <header className='text-center m-5'>Hello Rick and Morty</header>
+      <div className='row'>
+        cards
+      </div>
+    </>
   );
 }
 
-export default App;
+export default App
